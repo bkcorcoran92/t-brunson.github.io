@@ -18,7 +18,6 @@
 
     schemaCallback([tableInfo]);
 };
-
     myConnector.getData = function(table, doneCallback) {
     $.getJSON("http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson", function(resp) {
         var feat = resp.features,
@@ -43,7 +42,8 @@
     tableau.registerConnector(myConnector);
 })();
 
-(document).ready(function () {
+
+$(document).ready(function () {
     $("#submitButton").click(function () {
         tableau.connectionName = "USGS Earthquake Feed";
         tableau.submit();
