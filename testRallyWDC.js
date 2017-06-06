@@ -20,7 +20,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("localhost.8888", function(resp) {
+        $.getJSON("http://localhost.8888", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
