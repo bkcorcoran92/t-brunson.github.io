@@ -27,7 +27,7 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "mag": feat[i].properties.FormattedID,
+                    "mag": feat[i].FormattedID,
                 });
             }
 
