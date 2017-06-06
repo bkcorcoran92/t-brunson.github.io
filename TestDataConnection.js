@@ -19,9 +19,8 @@ myConnector.getData = function(table, doneCallback) {
       $(document).ready(function() {
         $("#submitButton").click(function() {
         console.log(tableData);
-        
         }
-        )
+                                 );
       }
-        )
-}
+                        );
+})();
