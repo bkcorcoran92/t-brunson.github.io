@@ -5,7 +5,7 @@
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
-            FormattedID: "Formatted ID",
+            id :"id", alias :"Formated ID",
             dataType: tableau.dataTypeEnum.string
         }, ];
 
