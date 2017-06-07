@@ -10,7 +10,7 @@ var feat;
     ];
 
     var tableInfo = {
-        id : "Rally Data",
+        id : "RallyData",
         alias : "Rally Data based on individual workspace/project",
         columns : cols
     };
