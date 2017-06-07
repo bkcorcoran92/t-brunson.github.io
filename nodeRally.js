@@ -60,5 +60,6 @@ app.listen(3000, function () {
 $(document).ready(function() {
         $("#sumbitButton").click(function() {
             
-        });
+        })
+});
     
