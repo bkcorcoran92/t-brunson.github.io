@@ -1,6 +1,6 @@
 //create web server using express
 var express = require('express'); // need to install express - npm install express --save
-var app = express(); 
+var app = express.createServer();
 
 
 
@@ -53,12 +53,12 @@ app.get('/', function (req, res) {
   res.send(stuff);
 })
 
-app.listen(8888, function () {
-  console.log('Example app listening on port 8888!')
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
 })
 
-//$(document).ready(function() {
-     //   $("#dataButton").click(function() {
+$(document).ready(function() {
+        $("#sumbitButton").click(function() {
             
-      //  });
+        });
     

@@ -1,48 +1,46 @@
-(function() {
-    // Create the connector object
+var feat;
+(function () {
+    
     var myConnector = tableau.makeConnector();
+    
+    myConnector.getSchema = function (schemaCallback) {
+    var cols = [
+        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
+        
+    ];
 
-    // Define the schema
-    myConnector.getSchema = function(schemaCallback) {
-        var cols = [{
-            id :"FormattedID", alias :"Formatted ID",
-            dataType: tableau.dataTypeEnum.string
-        }, ];
-
-        var tableSchema = {
-            id: "Project Info",
-            alias: "Trial for pulling data from rally database",
-            columns: cols
-        };
-
-        schemaCallback([tableSchema]);
+    var tableInfo = {
+        id : "Rally Data",
+        alias : "Rally Data based on individual workspace/project",
+        columns : cols
     };
 
-    // Download the data
+    schemaCallback([tableInfo]);
+};
+   
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://localhost:8888/", function(resp) {
-            var feat = resp.features,
-                tableData = [];
-
-            // Iterate over the JSON object
-            for (var i = 0, len = feat.length; i < len; i++) {
-                tableData.push({
-                    "id": feat[i].FormattedID,
-                });
-            }
-
-            table.appendRows(tableData);
-            doneCallback();
-        });
-    };
-
-    tableau.registerConnector(myConnector);
-
-    // Create event listeners for when the user submits the form
-    $(document).ready(function() {
-        $("#submitButton").click(function() {
-            tableau.connectionName = "Rally Data"; // This will be the data source name in Tableau
-            tableau.submit(); // This sends the connector object to Tableau
-        });
+    $.getJSON("http://localhost:3000", function(resp) {
+        var feat = resp,
+            tableData = [];
+console.log(feat);
+        // Iterate over the JSON object
+        for (var i = 0, len = feat.length; i < len; i++) {
+             tableData.push({
+                    "FormattedID": feat[i].FormattedID,
+                 
+            });
+        }
+        table.appendRows(tableData);
+        doneCallback();
     });
+};
+    tableau.registerConnector(myConnector);
+        $(document).ready(function () {
+        $("#submitButton").click(function () {
+            tableau.connectionName = "Rally Data";
+            tableau.submit();
+            
+    });
+});
+    
 })();
