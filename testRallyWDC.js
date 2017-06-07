@@ -32,7 +32,7 @@ console.log(feat);
         table.appendRows(tableData);
         doneCallback();
     });
-};
+});
     tableau.registerConnector(myConnector);
         $(document).ready(function () {
         $("#submitButton").click(function () {
@@ -41,5 +41,6 @@ console.log(feat);
             
     });
 });
-    
 })();
+    
+

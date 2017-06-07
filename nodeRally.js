@@ -61,5 +61,4 @@ $(document).ready(function() {
         $("#sumbitButton").click(function() {
             
         })
-});
     
