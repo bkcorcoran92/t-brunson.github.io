@@ -27,12 +27,13 @@ console.log(feat);
         for (var i = 0, len = feat.length; i < len; i++) {
              tableData.push({  
                 "FormattedID": feat[i].FormattedID,     
+                 
             });
         }
         table.appendRows(tableData);
         doneCallback();
     });
-});
+};
     tableau.registerConnector(myConnector);
         $(document).ready(function () {
         $("#submitButton").click(function () {
