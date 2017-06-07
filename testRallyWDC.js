@@ -37,7 +37,7 @@ console.log(feat);
     tableau.registerConnector(myConnector);
         $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Rally Data";
+            tableau.connectionName = "RallyData";
             tableau.submit();
             
     });
