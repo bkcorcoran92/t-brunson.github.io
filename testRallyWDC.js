@@ -1,15 +1,14 @@
 (function () {
     var myConnector = tableau.makeConnector();
 
-    myConnector.getSchema = function (schemaCallback) {
+   myConnector.getSchema = function (schemaCallback) {
     var cols = [
-         {id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string},         
-
+        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
     ];
 
     var tableInfo = {
         id : "RallyData",
-        alias : "ImportofRallyData",
+        alias : "Rally Data Import",
         columns : cols
     };
 
@@ -17,9 +16,8 @@
 };
 
     myConnector.getData = function(table, doneCallback) {
-        
     $.getJSON("http://localhost:3000", function(resp) {
-        var feat = resp,
+        var feat = resp.features,
             tableData = [];
 
         // Iterate over the JSON object
