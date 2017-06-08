@@ -18,7 +18,7 @@
     myConnector.getData = function(table, doneCallback) {
     
         $.getJSON("http://localhost:3000", function(resp) {
-        var feat = resp.features,
+        var feat = resp,
             tableData = [];
 
         // Iterate over the JSON object
