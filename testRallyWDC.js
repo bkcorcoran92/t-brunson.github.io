@@ -3,7 +3,7 @@
 
    myConnector.getSchema = function (schemaCallback) {
     var cols = [
-        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
+        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string }   
     ];
 
     var tableInfo = {
@@ -14,9 +14,10 @@
 
     schemaCallback([tableInfo]);
 };
-
+   
     myConnector.getData = function(table, doneCallback) {
-    $.getJSON("http://localhost:3000", function(resp) {
+    
+        $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp.features,
             tableData = [];
 
@@ -24,6 +25,7 @@
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
                 "FormattedID": feat[i].FormattedID,
+                "id": feat[i].id,
             });
         }
 
