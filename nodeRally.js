@@ -1,4 +1,3 @@
-//create web server using express
 var express = require('express'); // need to install express - npm install express --save
 var app = express(); 
 
@@ -51,8 +50,6 @@ restApi.query({
     }
 });
 
-
-
 app.get('/', function (req, res) {
   res.send(stuff);
 })
@@ -61,8 +58,6 @@ app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
 
-$(document).ready(function() {
-       $("#loginButton").click(function() {
-            
-        });
-    
+app.post('/', function(req, res, next) {
+ // Handle the post for this route
+});
