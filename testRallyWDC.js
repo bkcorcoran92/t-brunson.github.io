@@ -10,7 +10,7 @@
          { id : "_rallyAPIMajor", alias : "API Major", dataType : tableau.dataTypeEnum.float },
          { id : "_rallyAPIMinor", alias : "API Minor", dataType : tableau.dataTypeEnum.float },
          { id : "ScheduleState", alias : "Schedule State", dataType : tableau.dataTypeEnum.string },
-         { id : "Blocked", alias : "Blocked", dataType : tableau.dataTypeEnum.boolean },
+         { id : "Blocked", alias : "Blocked", dataType : tableau.dataTypeEnum.string },
          { id : "DirectChildrenCount", alias : "Children Count ", dataType : tableau.dataTypeEnum.float },
          { id : "_refObjectName", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
     ];
