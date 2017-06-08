@@ -28,14 +28,7 @@
             tableData.push({
                 "FormattedID": feat[i].FormattedID,
                 "Name": feat[i]._refObjectName,
-                "_objectVersion": feat[i]._objectVersion,
-                "_refObjectUUID": feat[i]._refObjectUUID,
-                "_rallyAPIMajor": feat[i]._rallyAPIMajor,
-                "_rallyAPIMinor": feat[i]._rallyAPIMinor,
-                "ScheduleState": feat[i].ScheduleState,
-                "Blocked": feat[i].Blocked,
-                "DirectChildrenCount": feat[i].DirectChildrenCount,
-                "_refObjectName": feat[i]._refObjectName,
+                
             });
         }
 
