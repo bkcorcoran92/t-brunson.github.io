@@ -4,8 +4,7 @@
     myConnector.getSchema = function (schemaCallback) {
     var cols = [
          { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
-         
-
+        
     ];
 
     var tableInfo = {
@@ -27,8 +26,6 @@
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
                 "FormattedID": feat[i].FormattedID,
-                
-                
             });
         }
 
