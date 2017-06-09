@@ -3,11 +3,13 @@
 
     myConnector.getSchema = function (schemaCallback) {
     var cols = [
-        { id : "_refObjectName", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
-        { id : "_refObjectUUID", alias : "Object UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "ObjectName", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
+        { id : "ObjectUUID", alias : "Object UUID", dataType : tableau.dataTypeEnum.string },
         { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
-        { id : "_refIterationName", alias : "Iteration Name", dataType : tableau.dataTypeEnum.string },
-        { id : "_refIterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "IterationName", alias : "Iteration Name", dataType : tableau.dataTypeEnum.string },
+        { id : "IterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectName", alias : "Project Name", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "Project UUID", dataType : tableau.dataTypeEnum.string },
         
         
     ];
@@ -29,8 +31,8 @@
         // Iterate over the JSON object
         for (var i = 0, len = feat.length; i < len; i++) {
             tableData.push({
-                "_refObjectUUID": feat[i]._refObjectUUID,
-                "_refObjectName": feat[i]._refObjectName,
+                "ObjectUUID": feat[i]._refObjectUUID,
+                "ObjectName": feat[i]._refObjectName,
                 "FormattedID": feat[i].FormattedID,
                 })
                 if (feat[i].Iteration == null){
@@ -40,8 +42,10 @@
                 }
                 else {
                  tableData.push({
-                "_refIterationName": feat[i].Iteration._refObjectName,
-                "_refIterationUUID": feat[i].Iteration._refObjectUUID,
+                "ProjectName": feat[i].Project._refObjectName,
+                "ProjectUUID": feat[i].Project._refObjectUUID,
+                "IterationName": feat[i].Iteration._refObjectName,
+                "IterationUUID": feat[i].Iteration._refObjectUUID,
             })
                                     }
         }
