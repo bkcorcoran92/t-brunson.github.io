@@ -29,10 +29,10 @@ var stuff;
 restApi.query({
     type: 'hierarchicalrequirement', //the type to query
     start: 1, //the 1-based start index, defaults to 1
-    pageSize: 2, //the page size (1-200, defaults to 200)
+    //pageSize: , //the page size (1-200, defaults to 200)
     limit: 10, //the maximum number of results to return- enables auto paging
     order: 'Rank', //how to sort the results
-    fetch: ['FormattedID', 'Name', 'ScheduleState', 'Children'], //the fields to retrieve
+    fetch: ['TotalResultCount','Iteration','PortfolioItem','Parent','Release','Project','FormattedID','Feature','StartDate','EndDate','State','Notes','PlanEstimate','ChildrenPlannedVelocity','PlannedVelocity','RevisionHistory','TaskActualTotal','TaskEstimateTotal','TaskRemainingTotal','Theme','UserIterationCapacities','IterationObjectID'], //the fields to retrieve 
     //query: queryUtils.where('DirectChildrenCount', '>', 0), //optional filter
     scope: {
         workspace: '/workspace/4203336782', //specify to query entire workspace
