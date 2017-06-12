@@ -7,7 +7,6 @@
     var object_cols = [
         { id : "ObjectName", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
     
-        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
         
         { id : "ObjectNotes", alias : "Object Notes", dataType : tableau.dataTypeEnum.string }
         
