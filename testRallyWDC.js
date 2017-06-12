@@ -23,8 +23,19 @@
         
         { id : "IterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
         
-        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string }   
+        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string },
         
+        { id : "StartDate", alias : "Iteation Start Date", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "EndDate", alias : "Iteation End Date", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "ProjectUUID", alias : "Iteation's Project ID", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "ProjectName", alias : "Iteation's Project Name", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "ParentUUID", alias : "Iteation's Parent Name", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "ParentName", alias : "Iteation's Parent Name", dataType : tableau.dataTypeEnum.string }
                         ];
         
     var iteratoinTable = {
@@ -59,7 +70,17 @@
                 "FormattedID": feat[i].FormattedID,
                 "ObjectUUID": feat[i]._refObjectUUID,
                 "IterationName": feat[i].Iteration._refObjectName,
-                "IterationUUID": feat[i].Iteration._refObjectUUID,                  })
+                "IterationUUID": feat[i].Iteration._refObjectUUID,
+                "StartDate": feat[i].Iteration.StartDate,
+                "EndDate": feat[i].Iteration.EndDate,
+                "ProjectUUID": feat[i].Iteration.Project._refObjectUUID,
+                "ProjectName": feat[i].Iteration.Project._refObjectName,
+                "ParentName": feat[i].Iteration.Project.Parent._refObjectName,
+                "ParentUUID": feat[i].Iteration.Project.Parent._refObjectUUID
+            
+            
+            
+            })
                                             }
                                                         }
             
