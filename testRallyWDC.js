@@ -6,9 +6,7 @@
         
     var object_cols = [
         { id : "ObjectName", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
-        
-        { id : "ObjectUUID", alias : "Object UUID", dataType : tableau.dataTypeEnum.string },
-        
+    
         { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string }
         
                         ];
@@ -25,7 +23,7 @@
         
         { id : "IterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ObjectUUID", alias : "Object UUID", dataType : tableau.dataTypeEnum.string }    
+        { id : "FormattedID", alias : "Formatted ID", dataType : tableau.dataTypeEnum.string }   
         
                         ];
         
@@ -57,6 +55,8 @@
             
              if (feat[i].Iteration !== null){
             tableData.push({
+                "ObjectName": feat[i]._refObjectName,
+                "FormattedID": feat[i].FormattedID,
                 "ObjectUUID": feat[i]._refObjectUUID,
                 "IterationName": feat[i].Iteration._refObjectName,
                 "IterationUUID": feat[i].Iteration._refObjectUUID,                  })
