@@ -14,7 +14,7 @@
                         ];
         
     var objectTable = {
-        id : "Rally Object Data",
+        id : "RallyObjectData",
         alias : "Object Data",
         columns :  object_cols
     };
@@ -30,7 +30,7 @@
                         ];
         
     var iteratoinTable = {
-        id : "Rally Iteration Data",
+        id : "RallyIterationData",
         alias : "Iteratoin Data",
         columns :  iteration_cols
     };
