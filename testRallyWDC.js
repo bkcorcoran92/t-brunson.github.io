@@ -5,10 +5,73 @@
         //defining schema to place data
         
     var object_cols = [
-        { id : "ObjectName", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
-    
+        { id : "HR_re", alias : "ref", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ObjectNotes", alias : "Object Notes", dataType : tableau.dataTypeEnum.string }
+        { id : "HR_UUID", alias : "UUID", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_Name", alias : "Name", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_CreationDate", alias : "CreationDate", dataType : tableau.dataTypeEnum.date },
+        
+        { id : "HR_ObjectID", alias : "ObjectID", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Description", alias : "Description", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_DisplayColor", alias : "DisplayColor", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_Expedite", alias : "Expedite", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_FormattedID", alias : "FormattedID", dataType : tableau.dataTypeEnum.string }, 
+        
+        { id : "HR_LastUpdateDate", alias : "LastUpdateDate", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_Name", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
+    
+        { id : "HR_Notes", alias : "Notes", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_Owner", alias : "Owner", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Ready", alias : "Ready", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_ScheduleState", alias : "ScheduleState", dataType : tableau.dataTypeEnum.string },
+        
+        { id : "HR_AcceptedDate", alias : "AcceptedDate", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Blocked", alias : "Blocked", dataType : tableau.dataTypeEnum.float},
+        
+        { id : "HR_BlockedReason", alias : "BlockedReason", dataType : tableau.dataTypeEnum.float }, 
+        
+        { id : "HR_Blocker", alias : "Blocker", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_HasParent", alias : "HasParent", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_InProgressDate", alias : "InProgressDate", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Parent", alias : "Parent", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_PlanEstimate", alias : "PlanEstimate", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Rank", alias : "Rank", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Release", alias : "Release", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_TaskActualTotal", alias : "TaskActualTotal", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_TaskEstimateTotal", alias : "TaskEstimateTotal", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_TaskStatus", alias : "TaskStatus", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_TaskRemainingTotal", alias : "TaskRemainingTotal", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_TestCaseStatus", alias : "TestCaseStatus", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_c_AcceptanceCriteria", alias : "c_AcceptanceCriteria", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_c_IsTestable", alias : "IsTestable", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_c_Parity", alias : "c_Parity", dataType : tableau.dataTypeEnum.float },
+        
+        { id : "HR_Errors", alias : "Errors", dataType : tableau.dataTypeEnum.float },
         
                         ];
         
@@ -24,12 +87,10 @@
         
         { id : "IterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
         
-        
         { id : "StartDate", alias : "Iteation Start Date", dataType : tableau.dataTypeEnum.string },
         
         { id : "EndDate", alias : "Iteation End Date", dataType : tableau.dataTypeEnum.string },
-        
-        
+                
         { id : "PlanEstimate", alias : "Iteration Plan Estimate", dataType : tableau.dataTypeEnum.float },
         
         { id : "State", alias : "Iteration State", dataType : tableau.dataTypeEnum.string },
@@ -139,7 +200,7 @@
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
     $("#submitButton").click(function () {
-        tableau.connectionName = "USGS Earthquake Feed";
+        tableau.connectionName = "Rally Data Import";
         tableau.submit();
     });
 });
