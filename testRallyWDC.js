@@ -5,7 +5,7 @@
         //defining schema to place data
         
     var object_cols = [
-        { id : "HR_re", alias : "ref", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_ref", alias : "ref", dataType : tableau.dataTypeEnum.string },
         
         { id : "HR_UUID", alias : "UUID", dataType : tableau.dataTypeEnum.string },
         
@@ -159,12 +159,42 @@
              if (feat[i].Iteration !== null){
             tableData.push({
                //object calls
-                "ObjectName": feat[i]._refObjectName,
-
-                "ObjectUUID": feat[i]._refObjectUUID,
-                "ObjectNotes": feat[i].Notes,
+                "HR_ref": feat[i]._ref,
+                "HR_UUID": feat[i]._refObjectUUID,
+                "HR_Name": feat[i]._refObjectName,
+                "HR_CreationDate": feat[i].CreationDate,
+                "HR_ObjectID": feat[i].ObjectID,
+                "HR_Description": feat[i].Description,
+                "HR_DisplayColor": feat[i].DisplayColor,
+                "HR_Expedite": feat[i].Expedite,
+                "HR_FormattedID": feat[i].FormattedID,
+                "HR_LastUpdateDate": feat[i].LastUpdateDate,
+                "HR_Name": feat[i].Name,
+                "HR_Notes": feat[i].Notes,
+                "HR_Owner": feat[i].Owner,
+                "HR_Ready": feat[i].Ready,
+                "HR_ScheduleState": feat[i].ScheduleState,
+                "HR_AcceptedDate": feat[i].AcceptedDate,
+                "HR_Blocked": feat[i].Blocked,
+                "HR_BlockedReason": feat[i].BlockedReason,
+                "HR_Blocker": feat[i].Blocker,
+                "HR_HasParent": feat[i].HasParent,
+                "HR_InProgressDate": feat[i].InProgressDate,
+                "HR_Parent": feat[i].Parent,
+                "HR_PlanEstimate": feat[i].PlanEstimate,
+                "HR_Rank": feat[i].Rank,
+                "HR_Release": feat[i].Release,
+                "HR_TaskActualTotal": feat[i].TaskActualTotal,
+                "HR_TaskEstimateTotal": feat[i].TaskEstimateTotal,
+                "HR_TaskRemainingTotal": feat[i].TaskRemainingTotal,
+                "HR_TaskStatus": feat[i].TaskStatus,
+                "HR_TestCaseStatus": feat[i].TestCaseStatus,
+                "HR_c_AcceptanceCriteria": feat[i].c_AcceptanceCriteria,
+                "HR_c_IsTestable": feat[i].c_IsTestable,
+                "HR_c_Parity": feat[i].c_Parity,
+                "HR_Errors": feat[i].Errors,
                 
-                //Iteration calls
+               /* //Iteration calls
                 "IterationName": feat[i].Iteration._refObjectName,
                 "IterationUUID": feat[i].Iteration._refObjectUUID,
                 "StartDate": feat[i].Iteration.StartDate,
@@ -186,7 +216,7 @@
                 "ProjectName": feat[i].Project._refObjectName,
                 "ParentName": feat[i].Iteration.Project.Parent._refObjectName,
                 "ParentUUID": feat[i].Iteration.Project.Parent._refObjectUUID
-            
+            */
             })
                                             }
                                                         }
