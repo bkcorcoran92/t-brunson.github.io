@@ -75,7 +75,7 @@
         
                         ];
         
-    var objectTable = {
+    var hierarchicalrequirementTabel = {
         id : "RallyObjectData",
         alias : "Object Data",
         columns :  object_cols
@@ -117,15 +117,12 @@
     };
 
     var project_cols=[
-        { id : "ProjectUUID", alias : "Iteation's Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectRef", alias : "HR Project ref", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectName", alias : "Iteation's Project Name", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "HR Project UUID", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectName", alias : "Iteation's Project Name", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectName", alias : "HR Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ParentName", alias : "Iteation's Parent Name", dataType : tableau.dataTypeEnum.string },
-        
-        { id : "ParentUUID", alias : "Iteation's Project UUID", dataType : tableau.dataTypeEnum.string }
                     ];
     
     var projectTable ={
@@ -137,7 +134,7 @@
     
     
 
-    schemaCallback([objectTable, iteratoinTable, projectTable]);
+    schemaCallback([hierarchicalrequirementTabel]);
 };
 
     myConnector.getData = function(table, doneCallback) {
@@ -171,7 +168,7 @@
                 "HR_LastUpdateDate": feat[i].LastUpdateDate,
                 "HR_Name": feat[i].Name,
                 "HR_Notes": feat[i].Notes,
-                "HR_Owner": feat[i].Owner,
+               // "HR_Owner": feat[i].Owner,
                 "HR_Ready": feat[i].Ready,
                 "HR_ScheduleState": feat[i].ScheduleState,
                 "HR_AcceptedDate": feat[i].AcceptedDate,
@@ -206,17 +203,16 @@
                 "PlanEstimate": feat[i].Iteration.PlanEstimate,
                 "UserIterationCapacities": feat[i].Iteration.UserIterationCapacities.Count,
                 "State": feat[i].Iteration.State,
-                
+               
                 
                 
                 
                 
                 //project calls
+                "ProjectRef": feat[i].Project._ref,
                 "ProjectUUID": feat[i].Project._refObjectUUID,
                 "ProjectName": feat[i].Project._refObjectName,
-                "ParentName": feat[i].Iteration.Project.Parent._refObjectName,
-                "ParentUUID": feat[i].Iteration.Project.Parent._refObjectUUID
-            */
+                 */
             })
                                             }
                                                         }

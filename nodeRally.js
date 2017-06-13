@@ -24,21 +24,40 @@ restApi = rally({
         //any additional request options (proxy options, timeouts, etc.)     
     }
 });
+var ResultCount;
+restApi.query({
+    type: 'Iteration', //the type to query
+    scope: {
+        workspace: '/workspace/4203336782', //specify to query entire workspace
+        project: '/project/34067667823', //specify to query a specific project
+        
+        up: false, //true to include parent project results, false otherwise
+        down: true //true to include child project results, false otherwise
+    }
 
+}, function(error, result) {
+    if(error) {
+        console.log(error);
+    } else {
+        console.log(parseFloat(result.TotalResultCount));
+        ResultCount = parseFloat(result.TotalResultCount);
+    }
+});
 var stuff;
 restApi.query({
     type: 'hierarchicalrequirement', //the type to query
     start: 1, //the 1-based start index, defaults to 1
     //pageSize: , //the page size (1-200, defaults to 200)
-    limit: 10, //the maximum number of results to return- enables auto paging
-    order: 'Rank', //how to sort the results
-    fetch: ['TotalResultCount','Iteration','PortfolioItem','Parent','Release','Project','FormattedID','Feature','StartDate','EndDate','State','Notes','PlanEstimate','ChildrenPlannedVelocity','PlannedVelocity','RevisionHistory','TaskActualTotal','TaskEstimateTotal','TaskRemainingTotal','Theme','UserIterationCapacities','IterationObjectID'], //the fields to retrieve 
-    //query: queryUtils.where('DirectChildrenCount', '>', 0), //optional filter
+    limit: ResultCount, //the maximum number of results to return- enables auto paging
+    //order: 'Rank', //how to sort the results
+    fetch: ['CreationDate','ObjectID',"DisplayColor","Description",
+"Expedite","LastUpdateDate","Name","Owner","Ready","ScheduleState","AcceptedDate","Blocked","BlockedReason","Blocker","HasParent","InProgressDate","Rank","TaskStatus","TestCaseStatus","c_AcceptanceCriteria","c_IsTestable","c_Parity","Errors","Warnings",'"Description','Iteration','Parent','Release','_objectVersion','FormattedID','Feature','StartDate','EndDate','State','Notes','PlanEstimate','ChildrenPlannedVelocity','PlannedVelocity','RevisionHistory','TaskActualTotal','TaskEstimateTotal','TaskRemainingTotal','Theme','UserIterationCapacities','IterationObjectID'],
     scope: {
         workspace: '/workspace/4203336782', //specify to query entire workspace
-        project: '/project/34067667823' //specify to query a specific project
-        //up: false //true to include parent project results, false otherwise
-        //down: true //true to include child project results, false otherwise
+        project: '/project/34067667823', //specify to query a specific project
+        
+        up: false, //true to include parent project results, false otherwise
+        down: true, //true to include child project results, false otherwise
     },
     requestOptions: {} //optional additional options to pass through to request
 }, function(error, result) {
