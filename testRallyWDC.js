@@ -5,67 +5,67 @@
         //defining schema to place data
         
     var hierarchicalrequirement_cols = [
-        { id : "HR_ref", alias : "ref", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_UUID", alias : "UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_UUID", alias : "User StoryUUID", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Name", alias : "Name", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Name", alias : "User Story Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_CreationDate", alias : "CreationDate", dataType : tableau.dataTypeEnum.date },
+        { id : "HR_CreationDate", alias : "User Story CreationDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "HR_ObjectID", alias : "ObjectID", dataType : tableau.dataTypeEnum.float },
+        { id : "HR_ObjectID", alias : "User Story ObjectID", dataType : tableau.dataTypeEnum.float },
         
-        { id : "HR_Description", alias : "Description", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Description", alias : "User Story Description", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_DisplayColor", alias : "DisplayColor", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_DisplayColor", alias : "User Story DisplayColor", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Expedite", alias : "Expedite", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Expedite", alias : "User Story Expedite", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_FormattedID", alias : "FormattedID", dataType : tableau.dataTypeEnum.string }, 
+        { id : "HR_FormattedID", alias : "User StoryFormattedID", dataType : tableau.dataTypeEnum.string }, 
         
-        { id : "HR_LastUpdateDate", alias : "LastUpdateDate", dataType : tableau.dataTypeEnum.date },
+        { id : "HR_LastUpdateDate", alias : "User Story LastUpdateDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "HR_Name", alias : "Object Name", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Name", alias : "User Story Object Name", dataType : tableau.dataTypeEnum.string },
     
-        { id : "HR_Notes", alias : "Notes", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Notes", alias : "User Story Notes", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Ready", alias : "Ready", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Ready", alias : "User Story Ready", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_ScheduleState", alias : "ScheduleState", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_ScheduleState", alias : "User Story ScheduleState", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_AcceptedDate", alias : "AcceptedDate", dataType : tableau.dataTypeEnum.date },
+        { id : "HR_AcceptedDate", alias : "User Story AcceptedDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "HR_Blocked", alias : "Blocked", dataType : tableau.dataTypeEnum.string},
+        { id : "HR_Blocked", alias : "User Story Blocked", dataType : tableau.dataTypeEnum.string},
         
-        { id : "HR_BlockedReason", alias : "BlockedReason", dataType : tableau.dataTypeEnum.string }, 
+        { id : "HR_BlockedReason", alias : "User Story BlockedReason", dataType : tableau.dataTypeEnum.string }, 
         
-        { id : "HR_Blocker", alias : "Blocker", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Blocker", alias : "User Story Blocker", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_HasParent", alias : "HasParent", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_HasParent", alias : "User Story HasParent", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_InProgressDate", alias : "InProgressDate", dataType : tableau.dataTypeEnum.date },
+        { id : "HR_InProgressDate", alias : "User Story InProgressDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "HR_Parent", alias : "Parent", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Parent", alias : "User Story Parent", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_PlanEstimate", alias : "PlanEstimate", dataType : tableau.dataTypeEnum.float },
+        { id : "HR_PlanEstimate", alias : "User Story PlanEstimate", dataType : tableau.dataTypeEnum.float },
         
         { id : "HR_Rank", alias : "Rank", dataType : tableau.dataTypeEnum.float },
 
-        { id : "HR_TaskActualTotal", alias : "TaskActualTotal", dataType : tableau.dataTypeEnum.float },
+        { id : "HR_TaskActualTotal", alias : "User Story TaskActualTotal", dataType : tableau.dataTypeEnum.float },
         
-        { id : "HR_TaskEstimateTotal", alias : "TaskEstimateTotal", dataType : tableau.dataTypeEnum.float },
+        { id : "HR_TaskEstimateTotal", alias : "User Story TaskEstimateTotal", dataType : tableau.dataTypeEnum.float },
         
-        { id : "HR_TaskStatus", alias : "TaskStatus", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_TaskStatus", alias : "User Story TaskStatus", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_TaskRemainingTotal", alias : "TaskRemainingTotal", dataType : tableau.dataTypeEnum.float },
+        { id : "HR_TaskRemainingTotal", alias : "User Story TaskRemainingTotal", dataType : tableau.dataTypeEnum.float },
         
-        { id : "HR_TestCaseStatus", alias : "TestCaseStatus", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_TestCaseStatus", alias : "User Story TestCaseStatus", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_c_AcceptanceCriteria", alias : "c_AcceptanceCriteria", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_c_AcceptanceCriteria", alias : "User Story c_AcceptanceCriteria", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_c_IsTestable", alias : "IsTestable", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_c_IsTestable", alias : "User Story IsTestable", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_c_Parity", alias : "c_Parity", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_c_Parity", alias : "User Story c_Parity", dataType : tableau.dataTypeEnum.string },
         
                         ];
         
@@ -83,9 +83,9 @@
         
         { id : "ProjectName", alias : "HR Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Project_ref", alias : "HR Project ref", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Project_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Project_UUID", alias : "HR Project UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Project_UUID", alias : "User Story UUID", dataType : tableau.dataTypeEnum.string },
         
                     ];
     
@@ -102,9 +102,9 @@
         
         { id : "OwnerName", alias : "HR Owner Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Owner_ref", alias : "Owner", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Owner_ref", alias : "User Story Ref", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Owner_UUID", alias : "Owner", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Owner_UUID", alias : "User Story UUID", dataType : tableau.dataTypeEnum.string },
         
                     ];
     
@@ -147,9 +147,9 @@
         
         { id : "Iteration_TaskRemainingTotal", alias : "Iteration TaskRemainingTotal", dataType : tableau.dataTypeEnum.float },
         
-        { id : "HR_Iteration_ref", alias : "Parent", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Iteration_ref", alias : "User Story Ref", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Iteration_UUID", alias : "Parent", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Iteration_UUID", alias : "User Story UUID", dataType : tableau.dataTypeEnum.string },
         
                     ];
     
@@ -250,8 +250,8 @@
                 
             try{
                 tableData.push({
-                    "HR_Owner_ref": feat[i].Owner._ref,
-                    "HR_Owner_UUID": feat[i].Owner._refObjectUUID,
+                    "HR_Owner_ref": feat[i]._ref,
+                    "HR_Owner_UUID": feat[i]._refObjectUUID,
                     "OwnerRef": feat[i].Owner._ref,
                     "OwnerUUID": feat[i].Owner._refObjectUUID,
                     "OwnerName": feat[i].Owner._refObjectName,
@@ -269,8 +269,8 @@
             //Iteration Check
             try{
                 tableData.push({
-                    "HR_Iteration_ref": feat[i].Iteration._ref,
-                    "HR_Iteration_UUID": feat[i].Iteration._refObjectUUID,
+                    "HR_Iteration_ref": feat[i]._ref,
+                    "HR_Iteration_UUID": feat[i]._refObjectUUID,
                     "Iteration_Ref": feat[i].Iteration._ref,
                     "Iteration_UUID": feat[i].Iteration._refObjectUUID,
                     "Iteration_Name": feat[i].Iteration._refObjectName,
@@ -300,8 +300,8 @@
             //Project Check
             try{
                 tableData.push({
-                    "HR_Project_ref": feat[i].Project._ref,
-                    "HR_Project_UUID": feat[i].Project._refObjectUUID,
+                    "HR_Project_ref": feat[i]._ref,
+                    "HR_Project_UUID": feat[i]._refObjectUUID,
                     "ProjectRef": feat[i].Project._ref,
                     "ProjectUUID": feat[i].Project._refObjectUUID,
                     "ProjectName": feat[i].Project._refObjectName,
@@ -318,8 +318,8 @@
             //Release Check
             try{
                 tableData.push({
-                    "HR_Release_ref": feat[i].Release._ref, 
-                    "HR_Release_UUID": feat[i].Release._refObjectUUID,
+                    "HR_Release_ref": feat[i]._ref, 
+                    "HR_Release_UUID": feat[i]._refObjectUUID,
                     "Release_Ref": feat[i].Release._ref,
                     "Release_UUID": feat[i].Release._refObjectUUID,
                     "Release_Name": feat[i].Release._refObjectName,
