@@ -71,7 +71,7 @@
         
     var hierarchicalrequirementTabel = {
         id : "hierarchicalRequirementData",
-        alias : "Object Data",
+        alias : "User Story",
         columns :  hierarchicalrequirement_cols
     };
 
