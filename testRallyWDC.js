@@ -45,7 +45,7 @@
         
         { id : "HR_InProgressDate", alias : "User Story InProgressDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "HR_Parent", alias : "User Story Parent", dataType : tableau.dataTypeEnum.object },
+        { id : "HR_Parent", alias : "User Story Parent", dataType : tableau.dataTypeEnum.string },
         
         { id : "HR_PlanEstimate", alias : "User Story PlanEstimate", dataType : tableau.dataTypeEnum.float },
         
