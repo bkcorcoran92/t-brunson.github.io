@@ -37,15 +37,15 @@
         
         { id : "HR_Blocked", alias : "User Story Blocked", dataType : tableau.dataTypeEnum.string},
         
-        { id : "HR_BlockedReason", alias : "User Story BlockedReason", dataType : tableau.dataTypeEnum.string }, 
+        { id : "HR_BlockedReason", alias : "User Story BlockedReason", dataType : tableau.dataTypeEnum.object}, 
         
-        { id : "HR_Blocker", alias : "User Story Blocker", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Blocker", alias : "User Story Blocker", dataType : tableau.dataTypeEnum.object },
         
         { id : "HR_HasParent", alias : "User Story HasParent", dataType : tableau.dataTypeEnum.string },
         
         { id : "HR_InProgressDate", alias : "User Story InProgressDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "HR_Parent", alias : "User Story Parent", dataType : tableau.dataTypeEnum.string },
+        { id : "HR_Parent", alias : "User Story Parent", dataType : tableau.dataTypeEnum.object },
         
         { id : "HR_PlanEstimate", alias : "User Story PlanEstimate", dataType : tableau.dataTypeEnum.float },
         
@@ -207,7 +207,44 @@
                
           if (table.tableInfo.id == "hierarchicalRequirementData"){
               for (var i = 0, len = feat.length; i < len; i++) {
+                  try{
               tableData.push({
+                    "HR_ref": feat[i]._ref,
+                    "HR_UUID": feat[i]._refObjectUUID,
+                    "HR_Name": feat[i]._refObjectName,
+                    "HR_CreationDate": feat[i].CreationDate,
+                    "HR_ObjectID": feat[i].ObjectID,
+                    "HR_Description": feat[i].Description,
+                    "HR_DisplayColor": feat[i].DisplayColor,
+                    "HR_Expedite": feat[i].Expedite,
+                    "HR_FormattedID": feat[i].FormattedID,
+                    "HR_LastUpdateDate": feat[i].LastUpdateDate,
+                    "HR_Name": feat[i].Name,
+                    "HR_Notes": feat[i].Notes,
+                    "HR_Ready": feat[i].Ready,
+                    "HR_ScheduleState": feat[i].ScheduleState,
+                    "HR_AcceptedDate": feat[i].AcceptedDate,
+                    "HR_Blocked": feat[i].Blocked,
+                    "HR_BlockedReason": feat[i].BlockedReason,
+                    "HR_Blocker": feat[i].Blocker,
+                    "HR_HasParent": feat[i].HasParent,
+                    "HR_InProgressDate": feat[i].InProgressDate,
+                    "HR_Parent": feat[i].Parent._refObjectUUID,
+                    "HR_PlanEstimate": feat[i].PlanEstimate,
+                    "HR_Rank": feat[i].Rank,
+                    "HR_TaskActualTotal": feat[i].TaskActualTotal,
+                    "HR_TaskEstimateTotal": feat[i].TaskEstimateTotal,
+                    "HR_TaskRemainingTotal": feat[i].TaskRemainingTotal,
+                    "HR_TaskStatus": feat[i].TaskStatus,
+                    "HR_TestCaseStatus": feat[i].TestCaseStatus,
+                    "HR_c_AcceptanceCriteria": feat[i].c_AcceptanceCriteria,
+                    "HR_c_IsTestable": feat[i].c_IsTestable,
+                    "HR_c_Parity": feat[i].c_Parity,
+                                });
+                  }
+                  
+                catch(e) {
+                    tableData.push({
                     "HR_ref": feat[i]._ref,
                     "HR_UUID": feat[i]._refObjectUUID,
                     "HR_Name": feat[i]._refObjectName,
@@ -239,10 +276,13 @@
                     "HR_c_AcceptanceCriteria": feat[i].c_AcceptanceCriteria,
                     "HR_c_IsTestable": feat[i].c_IsTestable,
                     "HR_c_Parity": feat[i].c_Parity,
-                    "HR_Errors": feat[i].Errors,
-                                });
+                        
+                    });
+                }
+                    
+              }
                                                                     }
-          }
+          
             
           if (table.tableInfo.id == "OwnerData"){
             //Owner Check
