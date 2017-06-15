@@ -5,7 +5,7 @@
         //defining schema to place data
         
     var hierarchicalrequirement_cols = [
-        { id : "HR_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
+        //{ id : "HR_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
         
         { id : "HR_UUID", alias : "User StoryUUID", dataType : tableau.dataTypeEnum.string },
         
@@ -83,7 +83,7 @@
         
         { id : "ProjectName", alias : "HR Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Project_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
+        //{ id : "HR_Project_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
         
         { id : "HR_Project_UUID", alias : "User Story UUID", dataType : tableau.dataTypeEnum.string },
         
@@ -102,7 +102,7 @@
         
         { id : "OwnerName", alias : "HR Owner Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "HR_Owner_ref", alias : "User Story Ref", dataType : tableau.dataTypeEnum.string },
+        //{ id : "HR_Owner_ref", alias : "User Story Ref", dataType : tableau.dataTypeEnum.string },
         
         { id : "HR_Owner_UUID", alias : "User Story UUID", dataType : tableau.dataTypeEnum.string },
         
@@ -115,7 +115,7 @@
     };
     
     var Iteration_cols=[
-        { id : "Iteration_Ref", alias : "Iteration ref", dataType : tableau.dataTypeEnum.string },
+       // { id : "Iteration_Ref", alias : "Iteration ref", dataType : tableau.dataTypeEnum.string },
         
         { id : "Iteration_UUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
         
@@ -160,7 +160,7 @@
     };
         
     var Release_cols=[
-        { id : "Release_Ref", alias : "Release ref", dataType : tableau.dataTypeEnum.string },
+        //{ id : "Release_Ref", alias : "Release ref", dataType : tableau.dataTypeEnum.string },
         
         { id : "Release_UUID", alias : "Release UUID", dataType : tableau.dataTypeEnum.string },
         
@@ -209,7 +209,7 @@
               for (var i = 0, len = feat.length; i < len; i++) {
                   try{
               tableData.push({
-                    "HR_ref": feat[i]._ref,
+                    //"HR_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "HR_UUID": feat[i]._refObjectUUID,
                     "HR_Name": feat[i]._refObjectName,
                     "HR_CreationDate": feat[i].CreationDate,
@@ -245,7 +245,7 @@
                   
                 catch(e) {
                     tableData.push({
-                    "HR_ref": feat[i]._ref,
+                    //"HR_ref":feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "HR_UUID": feat[i]._refObjectUUID,
                     "HR_Name": feat[i]._refObjectName,
                     "HR_CreationDate": feat[i].CreationDate,
@@ -290,7 +290,7 @@
                 
             try{
                 tableData.push({
-                    "HR_Owner_ref": feat[i]._ref,
+                   // "HR_Owner_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "HR_Owner_UUID": feat[i]._refObjectUUID,
                     "OwnerRef": feat[i].Owner._ref,
                     "OwnerUUID": feat[i].Owner._refObjectUUID,
@@ -309,7 +309,7 @@
             //Iteration Check
             try{
                 tableData.push({
-                    "HR_Iteration_ref": feat[i]._ref,
+                    //"HR_Iteration_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "HR_Iteration_UUID": feat[i]._refObjectUUID,
                     "Iteration_Ref": feat[i].Iteration._ref,
                     "Iteration_UUID": feat[i].Iteration._refObjectUUID,
@@ -340,7 +340,7 @@
             //Project Check
             try{
                 tableData.push({
-                    "HR_Project_ref": feat[i]._ref,
+                   // "HR_Project_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "HR_Project_UUID": feat[i]._refObjectUUID,
                     "ProjectRef": feat[i].Project._ref,
                     "ProjectUUID": feat[i].Project._refObjectUUID,
@@ -358,7 +358,7 @@
             //Release Check
             try{
                 tableData.push({
-                    "HR_Release_ref": feat[i]._ref, 
+                    //"HR_Release_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ), 
                     "HR_Release_UUID": feat[i]._refObjectUUID,
                     "Release_Ref": feat[i].Release._ref,
                     "Release_UUID": feat[i].Release._refObjectUUID,
