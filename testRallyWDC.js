@@ -37,9 +37,9 @@
         
         { id : "HR_Blocked", alias : "User Story Blocked", dataType : tableau.dataTypeEnum.string},
         
-        { id : "HR_BlockedReason", alias : "User Story BlockedReason", dataType : tableau.dataTypeEnum.bool}, 
+        { id : "HR_BlockedReason", alias : "User Story BlockedReason", dataType : tableau.dataTypeEnum.string}, 
         
-        { id : "HR_Blocker", alias : "User Story Blocker", dataType : tableau.dataTypeEnum.bool},
+        { id : "HR_Blocker", alias : "User Story Blocker", dataType : tableau.dataTypeEnum.string},
         
         { id : "HR_HasParent", alias : "User Story HasParent", dataType : tableau.dataTypeEnum.string },
         
