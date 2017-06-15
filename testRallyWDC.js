@@ -1,8 +1,10 @@
 (function () {
     var myConnector = tableau.makeConnector();
-
+    
+    // Creating Database Framework 
     myConnector.getSchema = function (schemaCallback) {
-        //defining schema to place data
+        
+    //defining schemas to place data
         
     var hierarchicalrequirement_cols = [
         //{ id : "HR_ref", alias : "User Story ref", dataType : tableau.dataTypeEnum.string },
@@ -196,15 +198,16 @@
 
   schemaCallback([hierarchicalrequirementTabel, ownerTable, IterationTable, projectTable, ReleaseTable]);
 };
-
+    
+    //Pulling Data From Rally
     myConnector.getData = function(table, doneCallback) {
     
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
             tableData = [];
         var i=0;
-        // Iterate over the JSON object
-               
+        
+          // Individual Table Calls     
           if (table.tableInfo.id == "hierarchicalRequirementData"){
               for (var i = 0, len = feat.length; i < len; i++) {
                   try{
@@ -282,7 +285,6 @@
                     
               }
                                                                     }
-          
             
           if (table.tableInfo.id == "OwnerData"){
             //Owner Check
@@ -385,7 +387,8 @@
         doneCallback();
     });
 };
-
+    
+    //Sending to tableau
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
     $("#submitButton").click(function () {
