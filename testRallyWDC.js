@@ -408,7 +408,7 @@
                 {
                     tableData[i].IterationName= feat.userStory[i].Iteration._refObjectName;
                                     
-                    tableData[i].IterationUUID= feat.userStory[i].Iteration._refObjectUUID;
+                    tableData[i].IterationUUID= feat.userStory[i].Iteration._ObjectID;
                 }
             if(tableData[i].FeatureName !== null)  { 
             try{
