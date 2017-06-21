@@ -17,7 +17,7 @@
         
         { id : "IterationName", alias : "Iteration Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "IterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "IterationUUID", alias : "Iteration ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Tags", alias : "User Story Tags", dataType : tableau.dataTypeEnum.string },
         
@@ -37,11 +37,11 @@
         
         { id : "ProjectName", alias : "User Story Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectID", alias : "User Story Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "User Story Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "ReleaseName", alias : "User Story Release Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ReleaseID", alias : "User Story Release ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ReleaseID", alias : "User Story ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Capability", alias : "User Story Capability", dataType : tableau.dataTypeEnum.string },
         
@@ -66,13 +66,13 @@
         
         { id : "ID", alias : "ProjectID", dataType : tableau.dataTypeEnum.float },
         
-        { id : "Name", alias : "HR Project Name", dataType : tableau.dataTypeEnum.string },
+        { id : "Name", alias : "Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ObjectID", alias : "HR Project UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "Project_UUID", alias : "Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Parent_Name", alias : "Parent Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "Parent_ID", alias : "Parent ID", dataType : tableau.dataTypeEnum.string },
+        { id : "Parent_ID", alias : "Parent ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Workspace_Name", alias : "Workspace Name", dataType : tableau.dataTypeEnum.string },
         
@@ -104,7 +104,7 @@
         
         { id : "ProjectName", alias : "Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectID", alias : "Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "PlanEstimate", alias : "Iteration Plan Estimate", dataType : tableau.dataTypeEnum.float },
         
@@ -147,7 +147,7 @@
         
         { id : "ProjectName", alias : "Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectID", alias : "Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "EndDate", alias : "Release Date", dataType : tableau.dataTypeEnum.date },
         
@@ -200,17 +200,17 @@
         
         { id : "IterationName", alias : "Iteration Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "IterationUUID", alias : "Iteration UUID", dataType : tableau.dataTypeEnum.string },
+        { id : "IterationObjectID", alias : "Iteration ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Owner", alias : "Defect Owner", dataType : tableau.dataTypeEnum.string },
         
         { id : "ProjectName", alias : "Defect Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectID", alias : "Defect Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "Defect Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "ReleaseName", alias : "Defect Release Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ReleaseID", alias : "Defect Release ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ReleaseID", alias : "Defect Release ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Tags", alias : "Defect Tag", dataType : tableau.dataTypeEnum.string },
         
@@ -220,7 +220,7 @@
         
         { id : "Requirement_Iteration", alias : "Itearation", dataType : tableau.dataTypeEnum.string },
         
-        { id : "Requirement_IterationID", alias : "Iteration ID", dataType : tableau.dataTypeEnum.string },
+        { id : "Requirement_IterationID", alias : "Iteration ObjectID", dataType : tableau.dataTypeEnum.string },
        
         { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.date },
         
@@ -240,9 +240,9 @@
         
         { id : "FormattedID", alias : "Task FormattedID", dataType : tableau.dataTypeEnum.string },
         
-        { id : "IterationName", alias : "Task Name", dataType : tableau.dataTypeEnum.string },
+        { id : "IterationName", alias : "Task Iteration Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "IterationID", alias : "Task ID", dataType : tableau.dataTypeEnum.string },
+        { id : "IterationID", alias : "Task Iteation ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Actuals", alias : "Task Actuals", dataType : tableau.dataTypeEnum.float },
         
@@ -262,11 +262,11 @@
         
         { id : "Project", alias : "Task Project", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectID", alias : "Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "Release", alias : "Release Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ReleaseID", alias : "Release ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ReleaseID", alias : "Release ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "WorkProduct_FormattedID", alias : "Task Work Product ID", dataType : tableau.dataTypeEnum.string },
         
@@ -298,11 +298,11 @@
         
         { id : "ProjectName", alias : "Project Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ProjectID", alias : "Project ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ProjectUUID", alias : "Project UUID", dataType : tableau.dataTypeEnum.string },
         
         { id : "ParentName", alias : "Parent Name", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ParentID", alias : "Parent ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ParentID", alias : "Parent ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "State", alias : "Portfolio Item State", dataType : tableau.dataTypeEnum.string },
         
@@ -346,7 +346,7 @@
         
         { id : "Release", alias : "Release", dataType : tableau.dataTypeEnum.string },
         
-        { id : "ReleaseID", alias : "Release ID", dataType : tableau.dataTypeEnum.string },
+        { id : "ReleaseID", alias : "Release ObjectID", dataType : tableau.dataTypeEnum.string },
         
         { id : "RunDate", alias : "Portfolio Item RunDate", dataType : tableau.dataTypeEnum.date },
         
@@ -390,7 +390,7 @@
                     "FeatureName": feat.userStory[i].Feature,
                     "OwnerName": feat.userStory[i].Owner,
                     "ProjectName": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._ref,
+                    "ProjectUUID": feat.userStory[i].Project._refObjectUUID,
                     "ReleaseName": feat.userStory[i].Release,
                     "ReleaseID": feat.userStory[i].Release,
                     "Capability": feat.userStory[i].c_Capability,
@@ -450,7 +450,7 @@
                     "StartDate": feat.userStory[i].Iteration.StartDate,
                     "EndDate": feat.userStory[i].Iteration.EndDate,
                     "ProjectName": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._ref,
+                    "ProjectUUID": feat.userStory[i].Project._refObjectUUID,
                     "PlanEstimate": feat.userStory[i].Iteration.PlanEstimate,
                     "PlannedVelocity": feat.userStory[i].Iteration.PlannedVelocity,
                     "ObjectID": feat.userStory[i].Iteration.ObjectID,
@@ -475,7 +475,7 @@
                    // "HR_Project_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "ID": '',
                     "Name": feat.userStory[i].Project._refObjectName,
-                    "ObjectID": feat.userStory[i].Project._refObjectUUID,
+                    "ProjectUUID": feat.userStory[i].Project._refObjectUUID,
                     "Parent_Name": feat.userStory[i].Parent.Name,
                     "Parent_ID": feat.userStory[i].Parent.ObjectID,
                     "Workspace_Name": feat.userStory[i].Workspace.Name,
@@ -512,7 +512,7 @@
                     "PlanEstimate": feat.userStory[i].Release.PlanEstimate,
                     "PlannedVelocity": feat.userStory[i].Release.PlannedVelocity,
                     "ProjectName": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._ref,
+                    "ProjectUUID": feat.userStory[i].Project._refObjectUUID,
                     "EndDate": feat.userStory[i].Release.ReleaseDate,
                     "StartDate": feat.userStory[i].Release.ReleaseStartDate,
                     "State": feat.userStory[i].Release.State,
@@ -550,7 +550,7 @@
                     "IterationUUID": feat.defect[i].Iteration,
                     "Owner": feat.defect[i].Owner,
                     "ProjectName": feat.defect[i].Project._refObjectName,
-                    "ProjectID": feat.defect[i].Project._refObjectUUID,
+                    "ProjectUUID": feat.defect[i].Project._refObjectUUID,
                     "ReleaseName": feat.defect[i].Release,
                     "ReleaseID": feat.defect[i].Release,
                     "Tags": feat.defect[i].Tags._tagsNameArray,
@@ -631,7 +631,7 @@
                     "TaskType": feat.task[i].c_Type,
                     "Owner": feat.task[i].Owner,
                     "Project": feat.task[i].Project,
-                    "ProjectID": feat.task[i].Project,
+                    "ProjectUUID": feat.task[i].Project,
                     "Release": feat.task[i].Release,
                     "ReleaseID": feat.task[i].Release,
                     "WorkProduct_FormattedID": feat.task[i].WorkProduct.FormattedID,
@@ -664,7 +664,7 @@
                 {
                     tableData[i].Project= feat.task[i].Project._refObjectName;
                     
-                    tableData[i].ProjectID= feat.task[i].Project._ref;
+                    tableData[i].ProjectUUID= feat.task[i].Project._refObjectUUID;
                 }
           
                                             }
@@ -679,7 +679,7 @@
                     "ObjectID": feat.portfolioItem[i].ObjectID,
                     "PortfolioItemName": feat.portfolioItem[i].Name,
                     "ProjectName": feat.portfolioItem[i].Project,
-                    "ProjectID": feat.portfolioItem[i].Project,
+                    "ProjectUUID": feat.portfolioItem[i].Project,
                     "ParentName": feat.portfolioItem[i].PortfolioItemType.Parent,
                     "ParentID": feat.portfolioItem[i].PortfolioItemType.Parent,
                     "State": feat.portfolioItem[i].State,
@@ -714,7 +714,7 @@
                 {
                     tableData[i].ProjectName= feat.portfolioItem[i].Project._refObjectName;
                                     
-                    tableData[i].ProjectID= feat.portfolioItem[i].Project._ref;
+                    tableData[i].ProjectUUID= feat.portfolioItem[i].Project._refObjectUUID;
                 }
             if(tableData[i].Release !== null)
                 {
