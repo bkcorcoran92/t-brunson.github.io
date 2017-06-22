@@ -674,7 +674,7 @@
                     "ProjectID": feat.portfolioItem[i].Project,
                     "ParentName": feat.portfolioItem[i].PortfolioItemType.Parent,
                     "ParentID": feat.portfolioItem[i].PortfolioItemType.Parent,
-                    "State": feat.portfolioItem[i].State,
+                    "State": feat.portfolioItem[i].State.Name,
                     "AcceptedLeafStoryCount": feat.portfolioItem[i].AcceptedLeafStoryCount,
                     "AcceptedLeafPlanEstimate": feat.portfolioItem[i].AcceptedLeafStoryPlanEstimateTotal,
                     "ActualEndDate": feat.portfolioItem[i].ActualEndDate,
