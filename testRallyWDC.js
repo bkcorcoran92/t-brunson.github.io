@@ -428,88 +428,79 @@
                                                 }
           // Iteration Call  
           if (table.tableInfo.id == "Iteration"){
-                for (var i = 0, len = feat.userStory.length; i < len; i++) {
-            //Iteration Error Handeling
-                try{
+                for (var i = 0, len = feat.iteration.length; i < len; i++) {
                 tableData.push({
                     //"HR_Iteration_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "ID":"",
-                    "Name": feat.userStory[i].Iteration._refObjectName,
-                    "StartDate": feat.userStory[i].Iteration.StartDate,
-                    "EndDate": feat.userStory[i].Iteration.EndDate,
-                    "ProjectName": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._refObjectUUID,
-                    "PlanEstimate": feat.userStory[i].Iteration.PlanEstimate,
-                    "PlannedVelocity": feat.userStory[i].Iteration.PlannedVelocity,
-                    "ObjectID": feat.userStory[i].Iteration.ObjectID,
-                    "State": feat.userStory[i].Iteration.State,
-                    "TaskActualTotal": feat.userStory[i].Iteration.TaskActualTotal,
-                    "TaskEstimateTotal": feat.userStory[i].Iteration.TaskEstimateTotal,
-                    "TaskRemainingTotal": feat.userStory[i].Iteration.TaskRemainingTotal,
+                    "Name": feat.iteration[i]._refObjectName,
+                    "StartDate": feat.iteration[i].StartDate,
+                    "EndDate": feat.iteration[i].EndDate,
+                    "ProjectName": feat.iteration[i].Project._refObjectName,
+                    "ProjectID": feat.iteration[i].Project._refObjectUUID,
+                    "PlanEstimate": feat.iteration[i].PlanEstimate,
+                    "PlannedVelocity": feat.iteration[i].PlannedVelocity,
+                    "ObjectID": feat.iteration[i].ObjectID,
+                    "State": feat.iteration[i].State,
+                    "TaskActualTotal": feat.iteration[i].TaskActualTotal,
+                    "TaskEstimateTotal": feat.iteration[i].TaskEstimateTotal,
+                    "TaskRemainingTotal": feat.iteration[i].TaskRemainingTotal,
                     //"Iteration_Sequence": feat[i].Iteration.State,
                                 });
-                }
-                catch(e){
-                    continue;
-                    }
                                                             }
                                                 }
           // Project Call    
           if (table.tableInfo.id == "Project"){
-            for (var i = 0, len = feat.userStory.length; i < len; i++) {
+            for (var i = 0, len = feat.project.length; i < len; i++) {
             //Project Check
             try{
                 tableData.push({
                    // "HR_Project_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "ID": '',
-                    "Name": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._refObjectUUID,
-                    "ParentName": feat.userStory[i].Parent.Name,
-                    "ParentID": feat.userStory[i].Parent.ObjectID,
-                    "WorkspaceName": feat.userStory[i].Workspace.Name,
-                    "WorkspaceID": feat.userStory[i].Workspace.ObjectID,
+                    "Name": feat.project[i]._refObjectName,
+                    "ProjectID": feat.project[i]._refObjectUUID,
+                    "ParentName": feat.project[i].Parent.Name,
+                    "ParentID": feat.project[i].Parent.ObjectID,
+                    "WorkspaceName": feat.project[i].Workspace.Name,
+                    "WorkspaceID": feat.project[i].Workspace.ObjectID,
                                 });
                 }
             catch(e){
                      tableData.push({
                    // "HR_Project_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "ID": '',
-                    "Name": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._refObjectUUID,
-                    "WorkspaceName": feat.userStory[i].Workspace.Name,
-                    "WorkspaceID": feat.userStory[i].Workspace.ObjectID,
+                    "Name": feat.project[i]._refObjectName,
+                    "ProjectID": feat.project[i]._refObjectUUID,
+                    "WorkspaceName": feat.project[i].Workspace.Name,
+                    "WorkspaceID": feat.project[i].Workspace.ObjectID,
                                 });
                     }
                                                                 }
                                                 }
           // Release Call 
           if (table.tableInfo.id == "Release"){
-            for (var i = 0, len = feat.userStory.length; i < len; i++) {
+            for (var i = 0, len = feat.release.length; i < len; i++) {
             //Release Check
-            try{
+            
                 tableData.push({
                     //"HR_Release_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ), 
                     "ID": '',
-                    "Name": feat.userStory[i].Release._refObjectName,
-                    "ObjectID": feat.userStory[i].Release.ObjectID,
-                    "Accepted": feat.userStory[i].Release.Accepted,
-                    "PlanEstimate": feat.userStory[i].Release.PlanEstimate,
-                    "PlannedVelocity": feat.userStory[i].Release.PlannedVelocity,
-                    "ProjectName": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._refObjectUUID,
-                    "EndDate": feat.userStory[i].Release.ReleaseDate,
-                    "StartDate": feat.userStory[i].Release.ReleaseStartDate,
-                    "State": feat.userStory[i].Release.State,
-                    "TaskActualTotal": feat.userStory[i].Release.TaskActualTotal,
-                    "TaskEstimateTotal": feat.userStory[i].Release.TaskEstimateTotal,
-                    "TaskRemainingTotal": feat.userStory[i].Release.TaskRemainingTotal,
+                    "Name": feat.release[i]._refObjectName,
+                    "ObjectID": feat.release[i].ObjectID,
+                    "Accepted": feat.release[i].Accepted,
+                    "PlanEstimate": feat.release[i].PlanEstimate,
+                    "PlannedVelocity": feat.release[i].PlannedVelocity,
+                    "ProjectName": feat.release[i].Project._refObjectName,
+                    "ProjectID": feat.release[i].Project._refObjectUUID,
+                    "EndDate": feat.release[i].ReleaseDate,
+                    "StartDate": feat.release[i].ReleaseStartDate,
+                    "State": feat.release[i].State,
+                    "TaskActualTotal": feat.release[i].TaskActualTotal,
+                    "TaskEstimateTotal": feat.release[i].TaskEstimateTotal,
+                    "TaskRemainingTotal": feat.release[i].TaskRemainingTotal,
                     //"Release_LastUpdated": feat[i].Release.Notes,
                                 });
-                }
-            catch(e){
-            continue;
-                    }
-                                                            }
+                
+                                                   }
                                             }
           // Defect Call
           if (table.tableInfo.id == "Defect"){
