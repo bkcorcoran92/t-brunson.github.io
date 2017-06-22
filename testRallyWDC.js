@@ -5,7 +5,7 @@
     //defining schemas to place data     
     var userStory_cols = [
         
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+        //{ id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
         
         { id : "FormattedID", alias : "FormattedID", dataType : tableau.dataTypeEnum.string }, 
         
@@ -51,7 +51,7 @@
         
         { id : "DirectChildren", alias : "Children Count", dataType : tableau.dataTypeEnum.string },
         
-        { id : "RunProject", alias : "Run Project", dataType : tableau.dataTypeEnum.string },
+        //{ id : "RunProject", alias : "Run Project", dataType : tableau.dataTypeEnum.string },
         
         { id : "Name", alias : "Name", dataType : tableau.dataTypeEnum.string },   
     ];
@@ -65,7 +65,7 @@
 
     var project_cols=[
         
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+        //{ id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
         
         { id : "Name", alias : "Name", dataType : tableau.dataTypeEnum.string },
         
@@ -88,7 +88,7 @@
         
     var iteration_cols=[
         
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+       
         
         { id : "Name", alias : "Name", dataType : tableau.dataTypeEnum.string },
         
@@ -114,7 +114,7 @@
         
         { id : "TaskRemainingTotal", alias : "Task Remaining Total", dataType : tableau.dataTypeEnum.float },
         
-        { id : "Sequence", alias : "Sequence", dataType : tableau.dataTypeEnum.float },
+        
                     ];
     
     var iterationTable ={
@@ -125,7 +125,7 @@
         
     var release_cols=[
         
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+        //{ id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
         
         { id : "Name", alias : "Name", dataType : tableau.dataTypeEnum.string },
         
@@ -153,7 +153,7 @@
         
         { id : "TaskRemainingTotal", alias : "Task Remaining Total", dataType : tableau.dataTypeEnum.float },
         
-        { id : "LastUpdated", alias : "Last Update", dataType : tableau.dataTypeEnum.date },
+        //{ id : "LastUpdated", alias : "Last Update", dataType : tableau.dataTypeEnum.date },
                     ];
     
     var releaseTable ={
@@ -164,7 +164,7 @@
     
     var defect_cols = [
         
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+        //{ id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
         
         { id : "FormattedID", alias : "FormattedID", dataType : tableau.dataTypeEnum.string }, 
         
@@ -214,7 +214,7 @@
        
         { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.date },
         
-        { id : "RunProject", alias : "Run Project", dataType : tableau.dataTypeEnum.string },
+        //{ id : "RunProject", alias : "Run Project", dataType : tableau.dataTypeEnum.string },
         
         { id : "Severity", alias : "Severity", dataType : tableau.dataTypeEnum.string },    
     ];
@@ -226,7 +226,7 @@
     };
         
     var task_cols=[
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+       // { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
         
         { id : "FormattedID", alias : "FormattedID", dataType : tableau.dataTypeEnum.string },
         
@@ -268,7 +268,7 @@
         
         { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.date },
         
-        { id : "RunProject", alias : "Run", dataType : tableau.dataTypeEnum.string },
+        //{ id : "RunProject", alias : "Run", dataType : tableau.dataTypeEnum.string },
                     ];
     
     var taskTabel = {
@@ -278,7 +278,7 @@
     };
         
     var portfolioItem_cols=[
-        { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
+       // { id : "ID", alias : "AutoID", dataType : tableau.dataTypeEnum.float },
         
         { id : "FormattedID", alias : "FormattedID", dataType : tableau.dataTypeEnum.string },
         
@@ -340,7 +340,7 @@
         
         { id : "RunDate", alias : "RunDate", dataType : tableau.dataTypeEnum.date },
         
-        { id : "RunProject", alias : "Run", dataType : tableau.dataTypeEnum.string },
+       // { id : "RunProject", alias : "Run", dataType : tableau.dataTypeEnum.string },
       ];
     
     var portfolioItemTabel = {
@@ -358,15 +358,16 @@
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
 
-if(dd<10) {
+            if(dd<10) {
     dd = '0'+dd
 } 
 
-if(mm<10) {
+            if(mm<10) {
     mm = '0'+mm
 } 
 
-today = mm + '/' + dd + '/' + yyyy;
+        today = mm + '/' + dd + '/' + yyyy;
+        
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
             tableData = []
@@ -393,7 +394,7 @@ today = mm + '/' + dd + '/' + yyyy;
                     "FeatureName": feat.userStory[i].Feature,
                     "OwnerName": feat.userStory[i].Owner,
                     "ProjectName": feat.userStory[i].Project._refObjectName,
-                    "ProjectID": feat.userStory[i].Project._refObjectUUID,
+                    "ProjectID": feat.userStory[i].Project._ref.substring(feat.userStory[i].Project._ref.lastIndexOf("/")+1, feat.userStory[i].Project._ref.length ),
                     "ReleaseName": feat.userStory[i].Release,
                     "ReleaseID": feat.userStory[i].Release,
                     "Capability": feat.userStory[i].c_Capability,
@@ -451,13 +452,13 @@ today = mm + '/' + dd + '/' + yyyy;
           if (table.tableInfo.id == "Iteration"){
                 for (var i = 0, len = feat.iteration.length; i < len; i++) {
                 tableData.push({
-                    //"HR_Iteration_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
-                    "ID":"",
+                    
+                    //"ID":"",
                     "Name": feat.iteration[i]._refObjectName,
                     "StartDate": feat.iteration[i].StartDate,
                     "EndDate": feat.iteration[i].EndDate,
                     "ProjectName": feat.iteration[i].Project._refObjectName,
-                    "ProjectID": feat.iteration[i].Project._refObjectUUID,
+                    "ProjectID": feat.iteration[i].Project._ref.substring(feat.iteration[i].Project._ref.lastIndexOf("/")+1, feat.iteration[i].Project._ref.length ),
                     "PlanEstimate": feat.iteration[i].PlanEstimate,
                     "PlannedVelocity": feat.iteration[i].PlannedVelocity,
                     "ObjectID": feat.iteration[i].ObjectID,
@@ -479,7 +480,7 @@ today = mm + '/' + dd + '/' + yyyy;
                    // "HR_Project_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "ID": '',
                     "Name": feat.project[i]._refObjectName,
-                    "ProjectID": feat.project[i]._refObjectUUID,
+                    "ProjectID": feat.project[i]._ref.substring(feat.project[i]._ref.lastIndexOf("/")+1, feat.project[i]._ref.length ),
                     "ParentName": feat.project[i].Parent.Name,
                     "ParentID": feat.project[i].Parent.ObjectID,
                     "WorkspaceName": feat.project[i].Workspace.Name,
@@ -491,7 +492,7 @@ today = mm + '/' + dd + '/' + yyyy;
                    // "HR_Project_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     "ID": '',
                     "Name": feat.project[i]._refObjectName,
-                    "ProjectID": feat.project[i]._refObjectUUID,
+                    "ProjectID": feat.project[i]._ref.substring(feat.project[i]._ref.lastIndexOf("/")+1, feat.project[i]._ref.length ),
                     "WorkspaceName": feat.project[i].Workspace.Name,
                     "WorkspaceID": feat.project[i].Workspace.ObjectID,
                                 });
@@ -512,7 +513,7 @@ today = mm + '/' + dd + '/' + yyyy;
                     "PlanEstimate": feat.release[i].PlanEstimate,
                     "PlannedVelocity": feat.release[i].PlannedVelocity,
                     "ProjectName": feat.release[i].Project._refObjectName,
-                    "ProjectID": feat.release[i].Project._refObjectUUID,
+                    "ProjectID": feat.release[i].Project._ref.substring(feat.release[i].Project._ref.lastIndexOf("/")+1, feat.release[i].Project._ref.length ),
                     "EndDate": feat.release[i].ReleaseDate,
                     "StartDate": feat.release[i].ReleaseStartDate,
                     "State": feat.release[i].State,
@@ -546,7 +547,7 @@ today = mm + '/' + dd + '/' + yyyy;
                     "IterationID": feat.defect[i].Iteration,
                     "Owner": feat.defect[i].Owner,
                     "ProjectName": feat.defect[i].Project._refObjectName,
-                    "ProjectID": feat.defect[i].Project._refObjectUUID,
+                    "ProjectID": feat.defect[i].Project._ref.substring(feat.defect[i].Project._ref.lastIndexOf("/")+1, feat.defect[i].Project._ref.length ),
                     "ReleaseName": feat.defect[i].Release,
                     "ReleaseID": feat.defect[i].Release,
                     "Tags": feat.defect[i].Tags._tagsNameArray,
@@ -656,7 +657,7 @@ today = mm + '/' + dd + '/' + yyyy;
                 {
                     tableData[i].Project= feat.task[i].Project._refObjectName;
                     
-                    tableData[i].ProjectID= feat.task[i].Project._refObjectUUID;
+                    tableData[i].ProjectID= feat.task[i].Project._ref.substring(feat.task[i].Project._ref.lastIndexOf("/")+1, feat.task[i].Project._ref.length );
                 }
                                             }
                                             }
@@ -705,7 +706,7 @@ today = mm + '/' + dd + '/' + yyyy;
                 {
                     tableData[i].ProjectName= feat.portfolioItem[i].Project._refObjectName;
                                     
-                    tableData[i].ProjectID= feat.portfolioItem[i].Project._refObjectUUID;
+                    tableData[i].ProjectID= feat.portfolioItem[i].Project._ref.substring(feat.portfolioItem[i].Project._ref.lastIndexOf("/")+1, feat.portfolioItem[i].Project._ref.length );
                 }
             if(tableData[i].Release !== null)
                 {
