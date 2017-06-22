@@ -59,8 +59,8 @@
     var userStoryTabel = {
         id : "UserStory",
         alias : "User Story Data",
-        columns : userStory_cols,
-        incrementColumnId: "ID"
+        columns : userStory_cols
+        
     };
 
     var project_cols=[
