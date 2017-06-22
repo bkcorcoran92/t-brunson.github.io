@@ -366,7 +366,7 @@
     mm = '0'+mm
 } 
 
-        today = 15 + '/' + dd + '/' + yyyy;
+        today = mm + '/' + dd + '/' + yyyy;
         
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
