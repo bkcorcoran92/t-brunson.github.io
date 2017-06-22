@@ -354,7 +354,7 @@
     //Pulling Data From Rally
     myConnector.getData = function(table, doneCallback) {
         var today = new Date();
-        var dd = 1;
+        var dd = 15;
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
 
