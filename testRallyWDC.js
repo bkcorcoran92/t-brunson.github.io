@@ -59,7 +59,8 @@
     var userStoryTabel = {
         id : "UserStory",
         alias : "User Story Data",
-        columns : userStory_cols
+        columns : userStory_cols,
+        incrementColumnId: "ID"
     };
 
     var project_cols=[
@@ -352,7 +353,20 @@
 };
     //Pulling Data From Rally
     myConnector.getData = function(table, doneCallback) {
-    
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd = '0'+dd
+} 
+
+if(mm<10) {
+    mm = '0'+mm
+} 
+
+today = mm + '/' + dd + '/' + yyyy;
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
             tableData = []
@@ -370,8 +384,8 @@
                     "ScheduleState": feat.userStory[i].ScheduleState,
                     "IterationName": feat.userStory[i].Iteration,
                     "IterationID": feat.userStory[i].Iteration,
-                    "Tags": feat.userStory[i].Tags,
-                    //"StoryType": feat[i].ScheduleState,
+                    "Tags": feat.userStory[i].Tags._tagsNameArray,
+                    "StoryType": feat.userStory[i].c_Type,
                     "WorkState": feat.userStory[i].c_WorkState,
                     "AcceptedDate": feat.userStory[i].AcceptedDate,
                     "IsTestable": feat.userStory[i].c_IsTestable,
@@ -383,7 +397,7 @@
                     "ReleaseName": feat.userStory[i].Release,
                     "ReleaseID": feat.userStory[i].Release,
                     "Capability": feat.userStory[i].c_Capability,
-                    //"RunDate": feat[i].c_Capability,
+                    "RunDate": today,
                     "ObjectID": feat.userStory[i].ObjectID,
                     "DirectChildren": feat.userStory[i].DirectChildrenCount,
                     //"RunProject": feat[i].DirectChildrenCount,
@@ -424,6 +438,13 @@
                                     
                     tableData[i].ReleaseID= feat.userStory[i].Release.ObjectID;
                 }
+                try
+                {
+                    tableData[i].Tags= feat.userStory[i].Tags._tagsNameArray.Name;           
+                }
+                catch(e){
+                     tableData[i].Tags= feat.userStory[i].Tags;
+                }
                                                             }             
                                                 }
           // Iteration Call  
@@ -444,6 +465,7 @@
                     "TaskActualTotal": feat.iteration[i].TaskActualTotal,
                     "TaskEstimateTotal": feat.iteration[i].TaskEstimateTotal,
                     "TaskRemainingTotal": feat.iteration[i].TaskRemainingTotal,
+                    
                     //"Iteration_Sequence": feat[i].Iteration.State,
                                 });
                                                             }
@@ -532,7 +554,7 @@
                     "Requirement_FormattedID": feat.defect[i].Requirement,
                     "Requirement_Iteration": feat.defect[i].Requirement,
                     "Requirement_IterationID": feat.defect[i].Requirement,
-                    //"RunDate": feat[i].Release.TaskRemainingTotal,
+                    "RunDate": today,
                     //"RunProject": feat[i].Release.TaskRmainingTotal,
                     "Severity": feat.defect[i].Severity,
                     //"Release_LastUpdated": feat[i].Release.Notes,
@@ -608,7 +630,7 @@
                     "LastUpdateDate": feat.task[i].LastUpdateDate,
                     "CreationDate": feat.task[i].CreationDate,
                     "ObjectID": feat.task[i].ObjectID,
-                    //"RunDate": '',
+                    "RunDate": today,
                     //"RunProject":'',
                                 });
                                                             }
@@ -673,7 +695,7 @@
                     "EPMSid": feat.portfolioItem[i].c_EPMSID,
                     "Release": feat.portfolioItem[i].Release,
                     "ReleaseID": feat.portfolioItem[i].Release,
-                    //"RunDate": '',
+                    "RunDate": today,
                     //"RunProject":'',
                               });
                                                                 }                                               
