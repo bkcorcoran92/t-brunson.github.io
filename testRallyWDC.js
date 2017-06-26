@@ -45,7 +45,7 @@
         
         { id : "Capability", alias : "Capability", dataType : tableau.dataTypeEnum.string },
         
-        { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.date },
+        { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.float },
         
         { id : "ObjectID", alias : "User Story ID", dataType : tableau.dataTypeEnum.string },
         
@@ -360,7 +360,7 @@
         var yyyy = today.getFullYear();
         //Incremental Refresh
         var incrementDate = new Date();
-       incrementDate = Date.parse(table.incrementValue || 1);
+       incrementDate = (table.incrementValue || 1);
         
         
         
@@ -373,7 +373,7 @@
 } 
 var n = today.getTime();
         today = mm + '/' + dd + '/' + yyyy;
-        todayTest=today+1;
+var todayTest=1498492682661+1000000000;
         
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
@@ -381,10 +381,10 @@ var n = today.getTime();
             i=0;
 console.log(incrementDate);
 console.log(Date.parse(today))
-console.log(Date.parse(todayTest));
+console.log(todayTest);
         
           if (table.tableInfo.id == "UserStory"){
-              if(incrementDate < Date.parse(todayTest)){
+              if(incrementDate < todayTest){
                 for (var i = 0, len = feat.userStory.length; i < len; i++) {
                     
                     tableData.push({
