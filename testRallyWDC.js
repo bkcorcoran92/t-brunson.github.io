@@ -358,7 +358,7 @@
         var dd = today.getDay();
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
-        var sec = today.getSeconds();
+        var min = today.getMinutes();
         //Incremental Refresh
         var incrementDate = new Date();
        incrementDate = Date.parse(table.incrementValue || 1);
@@ -373,7 +373,7 @@
     mm = '0'+mm
 } 
 
-        today = new Date(yyyy,mm,dd,sec)
+        today = new Date(yyyy,mm,dd,min);
         todayTest=today+1;
         
     $.getJSON("http://localhost:3000", function(resp) {
