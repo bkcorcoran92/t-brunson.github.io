@@ -371,7 +371,7 @@
             if(mm<10) {
     mm = '0'+mm
 } 
-
+var n = today.getTime();
         today = mm + '/' + dd + '/' + yyyy;
         todayTest=today+1;
         
@@ -409,7 +409,7 @@ console.log(Date.parse(todayTest));
                     "ReleaseName": feat.userStory[i].Release,
                     "ReleaseID": feat.userStory[i].Release,
                     "Capability": feat.userStory[i].c_Capability,
-                    "RunDate": today,
+                    "RunDate": n,
                     "ObjectID": feat.userStory[i].ObjectID,
                     "DirectChildren": feat.userStory[i].DirectChildrenCount,
                     //"RunProject": feat[i].DirectChildrenCount,
