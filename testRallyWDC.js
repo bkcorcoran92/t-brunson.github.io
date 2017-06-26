@@ -374,7 +374,7 @@
 } 
 
         today = new Date(yyyy,mm,dd,min);
-        todayTest=today+1;
+        todayTest=new Date(yyyy,mm+1,dd,min);
         
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
