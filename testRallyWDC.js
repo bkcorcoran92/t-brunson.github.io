@@ -45,7 +45,7 @@
         
         { id : "Capability", alias : "Capability", dataType : tableau.dataTypeEnum.string },
         
-        { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.float },
+        { id : "RunDate", alias : "Run Date", dataType : tableau.dataTypeEnum.date },
         
         { id : "ObjectID", alias : "User Story ID", dataType : tableau.dataTypeEnum.string },
         
@@ -358,9 +358,10 @@
         var dd = today.getDay();
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
+        var sec = today.getSeconds();
         //Incremental Refresh
         var incrementDate = new Date();
-       incrementDate = (table.incrementValue || 1);
+       incrementDate = Date.parse(table.incrementValue || 1);
         
         
         
@@ -371,9 +372,9 @@
             if(mm<10) {
     mm = '0'+mm
 } 
-var n = today.getTime();
-        today = mm + '/' + dd + '/' + yyyy;
-var todayTest=1498492682661+1000000000;
+
+        today = new Date(yyyy,mm,dd,sec)
+        todayTest=today+1;
         
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
@@ -381,10 +382,9 @@ var todayTest=1498492682661+1000000000;
             i=0;
 console.log(incrementDate);
 console.log(Date.parse(today))
-console.log(todayTest);
-        
+console.log(Date.parse(todayTest));
           if (table.tableInfo.id == "UserStory"){
-              if(incrementDate < todayTest){
+              if(incrementDate < Date.parse(todayTest)){
                 for (var i = 0, len = feat.userStory.length; i < len; i++) {
                     
                     tableData.push({
@@ -409,7 +409,7 @@ console.log(todayTest);
                     "ReleaseName": feat.userStory[i].Release,
                     "ReleaseID": feat.userStory[i].Release,
                     "Capability": feat.userStory[i].c_Capability,
-                    "RunDate": n,
+                    "RunDate": today,
                     "ObjectID": feat.userStory[i].ObjectID,
                     "DirectChildren": feat.userStory[i].DirectChildrenCount,
                     //"RunProject": feat[i].DirectChildrenCount,
