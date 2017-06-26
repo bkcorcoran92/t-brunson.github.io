@@ -59,8 +59,8 @@
     var userStoryTabel = {
         id : "UserStory",
         alias : "User Story Data",
-        columns : userStory_cols
-        
+        columns : userStory_cols,
+        incrementColumnId: "RunDate"
     };
 
     var project_cols=[
@@ -353,11 +353,17 @@
 };
     //Pulling Data From Rally
     myConnector.getData = function(table, doneCallback) {
+        //Setting Date
         var today = new Date();
-        var dd = 15;
+        var dd = today.getDay();
         var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
-
+        //Incremental Refresh
+        var incrementDate = new Date();
+       incrementDate = Date.parse(table.incrementValue || 1);
+        
+        
+        
             if(dd<10) {
     dd = '0'+dd
 } 
@@ -367,15 +373,20 @@
 } 
 
         today = mm + '/' + dd + '/' + yyyy;
+        todayTest=today+1;
         
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
             tableData = []
             i=0;
-          // User Story Call   
+console.log(incrementDate);
+console.log(Date.parse(today))
+console.log(Date.parse(todayTest));
+        
           if (table.tableInfo.id == "UserStory"){
+              if(incrementDate < Date.parse(todayTest)){
                 for (var i = 0, len = feat.userStory.length; i < len; i++) {
-               
+                    
                     tableData.push({
                     //"HR_ref": feat[i]._ref.substring(feat[i]._ref.lastIndexOf("/")+1, feat[i]._ref.length ),
                     //"ID": ,
@@ -403,9 +414,9 @@
                     "DirectChildren": feat.userStory[i].DirectChildrenCount,
                     //"RunProject": feat[i].DirectChildrenCount,
                     "Name": feat.userStory[i]._refObjectName,
-                                });                  
-                                               }
-              //Error Handeling  
+                                }); 
+                    }
+                  //Error Handeling  
                 for (var i = 0, len = feat.userStory.length; i < len; i++){
                         
                 if(tableData[i].IterationID !== null)
@@ -446,8 +457,9 @@
                 catch(e){
                      tableData[i].Tags= feat.userStory[i].Tags;
                 }
-                                                            }             
-                                                }
+                                                            }   
+                                               }
+          }
           // Iteration Call  
           if (table.tableInfo.id == "Iteration"){
                 for (var i = 0, len = feat.iteration.length; i < len; i++) {
@@ -723,6 +735,8 @@
           
                                                                 }
                                             }
+        
+            
         table.appendRows(tableData);
         doneCallback();
     });
