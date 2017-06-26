@@ -355,10 +355,9 @@
     myConnector.getData = function(table, doneCallback) {
         //Setting Date
         var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth(); //January is 0!
+        var dd = today.getDay();
+        var mm = today.getMonth()+1; //January is 0!
         var yyyy = today.getFullYear();
-        var min = today.getMinutes();
         //Incremental Refresh
         var incrementDate = new Date();
        incrementDate = Date.parse(table.incrementValue || 1);
@@ -373,8 +372,8 @@
     mm = '0'+mm
 } 
 
-        today = new Date(yyyy,mm,dd);
-        todayTest=new Date(yyyy,mm,dd+1);
+        today = mm + '/' + dd + '/' + yyyy;
+        todayTest=today+1;
         
     $.getJSON("http://localhost:3000", function(resp) {
         var feat = resp,
@@ -383,6 +382,7 @@
 console.log(incrementDate);
 console.log(Date.parse(today))
 console.log(Date.parse(todayTest));
+        
           if (table.tableInfo.id == "UserStory"){
               if(incrementDate < Date.parse(todayTest)){
                 for (var i = 0, len = feat.userStory.length; i < len; i++) {
