@@ -65,7 +65,7 @@ restApi.query({
     limit: ResultCount, //the maximum number of results to return- enables auto paging
     //order: 'Rank', //how to sort the results
     fetch: [//User Story Fields'
-    'FormattedID','PlanEstimate','Rank','ScheduleState','Tags','Type','WorkState','AcceptedDate','IsTestable','Capability','RundDate','ObjectID','DirectChildrenCount','Name','Iteration','Parent','Owner','Release','c_type',
+    'FormattedID','PlanEstimate','Rank','ScheduleState','Tags','Type','WorkState','AcceptedDate','IsTestable','Capability','RundDate','ObjectID','DirectChildrenCount','Name','Iteration','Parent','Owner','Release','c_type','Feature'
     ],
     scope: {
         workspace: '/workspace/4203336782', //specify to query entire workspace
@@ -266,8 +266,8 @@ function(error, result) {
 //Sending Data to Website
 app.get('/', function (req, res) {
     //Combining JSON API Call Data
-    res.json({userStory: hierarchicalrequirementJSON,iteration: iterationJSON, project: projectJSON, release: releaseJSON, defect: defectJSON, task: taskJSON, portfolioItem: portfolioItemJSON});
-    //res.send(releaseJSON);
+    //res.json({userStory: hierarchicalrequirementJSON,iteration: iterationJSON, project: projectJSON, release: releaseJSON, defect: defectJSON, task: taskJSON, portfolioItem: portfolioItemJSON});
+    res.send(hierarchicalrequirement);
 })
 app.post('/', function(req, res, next) {
  // Handle the post for this route
